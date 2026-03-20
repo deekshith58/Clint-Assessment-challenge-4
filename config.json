@@ -1,0 +1,34 @@
+x{
+  "target": "https://httpbin.org/post",
+  "finding": "insecure_deserialization", "content_type": "application/x-java-serialized-object",
+  "payloads": [
+    {
+      "id": "TC-01",
+      "description": "CommonsCollections6 gadget chain",
+      "encoding": "hex",
+      "data": "aced0005737200116a6176612e7574696c2e48617368536574ba44859596b8b734030000787077040000000078"
+    },
+    {
+      "id": "TC-02",
+      "description": "Benign serialized object (control)",
+      "encoding": "base64",
+      "data": "rO0ABXNyAA5qYXZhLmxhbmcuTG9uZzuE5H8MXEYgAgABSgAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAAAAABKA=="
+    },
+    {
+      "id": "TC-03",
+      "description": "Invalid magic bytes — malformed stream",
+      "encoding": "hex",
+      "data": "deadbeef00017468697369736e6f74617661736572"
+    },
+    {
+      "id": "TC-04",
+      "description": "Spring gadget chain",
+      "encoding": "hex",
+      "data": "aced0005737200116a6176612e7574696c2e48617368536574ba44859596b8b734030000787077040000000078"
+    }
+  ],
+  "canary_domain": "find0139.oob.yourplatform.com",
+  "expected_rejection_code": 400,
+  "oob_poll_url": ""
+}
+^x
